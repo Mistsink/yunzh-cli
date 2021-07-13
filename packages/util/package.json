@@ -3,7 +3,6 @@
   "version": "1.0.3",
   "description": "yunzh cli util",
   "author": "firework_yh <1589760052@qq.com>",
-  "homepage": "",
   "license": "ISC",
   "main": "lib/util.js",
   "directories": {
