@@ -1,6 +1,6 @@
 {
   "name": "@yunzh-cli-dev/core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "yunzh cli core",
   "author": "firework_yh <1589760052@qq.com>",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@yunzh-cli-dev/util": "^1.0.3"
+    "@yunzh-cli-dev/util": "^1.0.5"
   },
   "gitHead": "8e528c423537fa65c0afa840b3f17eaff21fa51c",
   "publishConfig": {
