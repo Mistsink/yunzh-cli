@@ -1,6 +1,6 @@
 {
   "name": "@yunzh-cli-dev/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "yunzh cli core",
   "author": "firework <123456789>",
   "homepage": "",
@@ -17,6 +17,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@yunzh-cli-dev/util": "^1.0.0"
+    "@yunzh-cli-dev/util": "^1.0.1"
   }
 }
