@@ -1,0 +1,15 @@
+{
+  "name": "yunzh-cli-dev",
+  "version": "1.0.0",
+  "description": "云蒸 cli dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

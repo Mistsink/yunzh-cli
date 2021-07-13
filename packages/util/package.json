@@ -1,0 +1,19 @@
+{
+  "name": "@yunzh-cli-dev/util",
+  "version": "1.0.0",
+  "description": "yunzh cli util",
+  "author": "firework <123456789>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/util.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
