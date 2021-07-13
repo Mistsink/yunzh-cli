@@ -1,6 +1,6 @@
 {
   "name": "@yunzh-cli-dev/util",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "yunzh cli util",
   "author": "firework_yh <1589760052@qq.com>",
   "homepage": "",
@@ -15,5 +15,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "gitHead": "8e528c423537fa65c0afa840b3f17eaff21fa51c",
+  "publishConfig": {
+    "access": "public"
   }
 }
