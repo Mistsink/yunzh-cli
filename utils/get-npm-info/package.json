@@ -1,0 +1,28 @@
+{
+	"name": "@yunzh-cli-dev/get-npm-info",
+	"version": "1.0.5",
+	"description": "> TODO: description",
+	"author": "firework <123456789>",
+	"homepage": "https://github.com/fireworkHy/yunzh-cli/tree/main/utils/get-npm-info#readme",
+	"license": "ISC",
+	"main": "lib/index.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fireworkHy/yunzh-cli.git"
+	},
+	"bugs": {
+		"url": "https://github.com/fireworkHy/yunzh-cli/issues"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"semver": "^7.3.5",
+		"url-join": "^4.0.1"
+	}
+}

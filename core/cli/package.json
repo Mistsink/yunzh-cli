@@ -1,0 +1,40 @@
+{
+  "name": "@yunzh-cli-dev/core",
+  "version": "1.0.5",
+  "description": "yunzh cli core",
+  "author": "firework_yh <1589760052@qq.com>",
+  "license": "ISC",
+  "main": "lib/index.ts",
+  "bin": {
+    "yunzh": "bin/index.ts"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@yunzh-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
+    "@yunzh-cli-dev/log": "file:../../utils/log",
+    "@yunzh-cli-dev/init": "file:../../commands/init",
+    "colors": "^1.4.0",
+    "commander": "^8.0.0",
+    "dotenv": "^10.0.0",
+    "home-or-tmp": "^4.0.0",
+    "import-local": "^3.0.2",
+    "minimist": "^1.2.5",
+    "npmlog": "^4.1.2",
+    "path-exists": "^4.0.0",
+    "root-check": "^2.0.0",
+    "semver": "^7.3.5"
+  },
+  "gitHead": "8e528c423537fa65c0afa840b3f17eaff21fa51c",
+  "publishConfig": {
+    "access": "public"
+  }
+}

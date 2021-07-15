@@ -1,0 +1,35 @@
+{
+  "name": "@yunzh-cli-dev/log",
+  "version": "1.0.5",
+  "description": "yunzh-cli-dev log",
+  "keywords": [
+    "log"
+  ],
+  "author": "firework <123456789>",
+  "homepage": "https://github.com/fireworkHy/yunzh-cli/tree/main/utils/log#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fireworkHy/yunzh-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/fireworkHy/yunzh-cli/issues"
+  },
+  "dependencies": {
+    "npmlog": "^4.1.2"
+  }
+}

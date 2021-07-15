@@ -1,0 +1,29 @@
+{
+  "name": "@yunzh-cli-dev/init",
+  "version": "1.0.5",
+  "description": "> TODO: description",
+  "author": "山野沉雾 <fireworkhy@gmail.com>",
+  "homepage": "https://github.com/fireworkHy/yunzh-cli/tree/main/commands/init#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fireworkHy/yunzh-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/fireworkHy/yunzh-cli/issues"
+  }
+}
