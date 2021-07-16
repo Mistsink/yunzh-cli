@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@yunzh-cli-dev/exec': file:../exec
   '@yunzh-cli-dev/get-npm-info': file:../../utils/get-npm-info
   '@yunzh-cli-dev/init': file:../../commands/init
   '@yunzh-cli-dev/log': file:../../utils/log
@@ -9,13 +10,13 @@ specifiers:
   dotenv: ^10.0.0
   home-or-tmp: ^4.0.0
   import-local: ^3.0.2
-  minimist: ^1.2.5
   npmlog: ^4.1.2
   path-exists: ^4.0.0
   root-check: ^2.0.0
   semver: ^7.3.5
 
 dependencies:
+  '@yunzh-cli-dev/exec': link:../exec
   '@yunzh-cli-dev/get-npm-info': link:../../utils/get-npm-info
   '@yunzh-cli-dev/init': link:../../commands/init
   '@yunzh-cli-dev/log': link:../../utils/log
@@ -24,7 +25,6 @@ dependencies:
   dotenv: 10.0.0
   home-or-tmp: 4.0.0
   import-local: 3.0.2
-  minimist: 1.2.5
   npmlog: 4.1.2
   path-exists: 4.0.0
   root-check: 2.0.0
@@ -201,10 +201,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-    dev: false
-
-  /minimist/1.2.5:
-    resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: false
 
   /npmlog/4.1.2:

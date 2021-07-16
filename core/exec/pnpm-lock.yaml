@@ -1,0 +1,9 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@yunzh-cli-dev/log': file:../../utils/log
+  '@yunzh-cli-dev/package': file:../../models/package
+
+dependencies:
+  '@yunzh-cli-dev/log': link:../../utils/log
+  '@yunzh-cli-dev/package': link:../../models/package

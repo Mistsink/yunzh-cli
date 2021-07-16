@@ -10,9 +10,12 @@ function getNpmInfo(npmName, registry = getDefaultRegistry()) {
     return axios.get(npmInfoUrl).then(res => res.status === 200 ? res : null)
 }
 
-
-function getDefaultRegistry() {
-    const isOrigin = false
+/**
+ * get registry, false for taobao, true for npmjs
+ * @param {boolean} isOrigin defaut: false
+ * @returns 
+ */
+function getDefaultRegistry(isOrigin = false) {
     return isOrigin ? 'https://registry.npmjs.org' : 'https://registry.npm.taobao.org'
 }
 
@@ -44,5 +47,6 @@ async function getNpmSemverVersion(npmName, baseVersion, registry = getDefaultRe
 module.exports = {
     getNpmInfo,
     getNpmVersions,
-    getNpmSemverVersion
+    getNpmSemverVersion,
+    getDefaultRegistry
 }

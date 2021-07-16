@@ -8,7 +8,8 @@ const commander = require('commander')
 
 
 const log = require('@yunzh-cli-dev/log')
-const { init } = require('@yunzh-cli-dev/init')
+const init = require('@yunzh-cli-dev/init')
+const exec = require('@yunzh-cli-dev/exec')
 
 
 //  require 支持 js(读取module.exports)、json(进行JSON.parse)、node(c++的插件)、any-orther(当作js)
@@ -16,24 +17,27 @@ const pkg = require('../package.json')
 const { LOWEST_NODE_VERSION, DEFAULT_CLI_HOME } = require('./const')
 
 
-let args, userHome
+let userHome
 const program = new commander.Command()
 
 
 async function core(argv) {
     try {
-        checkPkgVersion()
-        checkNodeVersion()
-        checkRoot()
-        await checkUserHome()
-        // checkInArgs()
-        checkEnv()
-        await checkGlobalUpdate()
+        await prepare()
 
         registrerCommand()
     } catch (e) {
         log.error(e)
     }
+}
+
+async function prepare() {
+    checkPkgVersion()
+    checkNodeVersion()
+    checkRoot()
+    await checkUserHome()
+    checkEnv()
+    await checkGlobalUpdate()
 }
 
 
@@ -43,9 +47,13 @@ function registrerCommand() {
         .usage('<command> [options]')
         .version(pkg.version)
         .option('-d, --debug', 'debug mode', false)
+        .option('-tp, --targetPath <targetPath>', 'specified local debug file path', '')
+
+    program.on('option:targetPath', targetPath => {
+        process.env.CLI_TARGET_PATH = targetPath
+    })
 
     program.on('option:debug', () => {
-        console.log("on option:debug ")
         process.env.LOG_LEVEL = 'verbose'
         log.level = process.env.LOG_LEVEL
     })
@@ -56,9 +64,9 @@ function registrerCommand() {
     })
 
     program
-        .command('init [projectName]')
+        .command('init [projectName]')  //  必需要有 [] 才能捕获到参数值
         .option('-f, --force', 'f orce to create project with specified name')
-        .action(init)
+        .action(exec)
 
     program.parse(process.argv)
 
@@ -96,30 +104,14 @@ function createDefaultConfig() {
     const cliConfig = {
         home: userHome
     }
-    if (process.env.CLI_HOME) {
+    if (process.env.CLI_HOME_PATH) {
         cliConfig.cliHome = path.join(cliConfig.home, process.env.CLI_HOME)
     } else {
         cliConfig.cliHome = path.join(cliConfig.home, DEFAULT_CLI_HOME)
     }
-    process.env.CLI_HOME = cliConfig.cliHome
+    process.env.CLI_HOME_PATH = cliConfig.cliHome
 
     config = cliConfig
-}
-
-function checkInArgs() {
-    const minimist = require('minimist')
-    args = minimist(process.argv.slice(2))
-    checkArgs()
-}
-
-//  check arg for debug mode
-function checkArgs() {
-    if (args.debug) {
-        process.env.LOG_LEVEL = 'verbose'
-    } else {
-        process.env.LOG_LEVEL = 'info'
-    }
-    log.level = process.env.LOG_LEVEL
 }
 
 async function checkUserHome() {

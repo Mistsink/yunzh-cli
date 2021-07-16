@@ -4,7 +4,7 @@
   "description": "云蒸 cli dev",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test_init": "yunzh init test_for_init -d"
   },
   "keywords": [],
   "repository": {
