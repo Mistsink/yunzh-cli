@@ -34,7 +34,9 @@
     "@yunzh-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
     "@yunzh-cli-dev/log": "file:../../utils/log",
     "@yunzh-cli-dev/utils": "file:../../utils/utils",
+    "fs-extra": "^10.0.0",
     "npminstall": "^4.11.0",
+    "path-exists": "^4.0.0",
     "pkg-dir": "^5.0.0"
   }
 }

@@ -2,7 +2,7 @@ module.exports = core
 
 const semver = require('semver')
 const colors = require('colors')
-const pathExists = require('path-exists').sync
+const pathExists = require('path-exists')
 const path = require('path')
 const commander = require('commander')
 
@@ -66,7 +66,10 @@ function registrerCommand() {
     program
         .command('init [projectName]')  //  必需要有 [] 才能捕获到参数值
         .option('-f, --force', 'f orce to create project with specified name')
-        .action(exec)
+        .action((...args) => {
+            exec(...args)
+                .catch(log.error)
+        })
 
     program.parse(process.argv)
 
@@ -89,10 +92,10 @@ async function checkGlobalUpdate() {
     }
 }
 
-function checkEnv() {
+async function checkEnv() {
     const dotenv = require('dotenv')
     const dotEnvPath = path.resolve(userHome, '.env')
-    if (pathExists(dotEnvPath)) {
+    if (await pathExists(dotEnvPath)) {
         dotenv.config({
             path: dotEnvPath
         })
@@ -116,8 +119,8 @@ function createDefaultConfig() {
 
 async function checkUserHome() {
     await import('home-or-tmp').then(
-        homeOrTmp => {
-            if (!homeOrTmp.default || !pathExists(homeOrTmp.default)) {
+        async homeOrTmp => {
+            if (!homeOrTmp.default || !await pathExists(homeOrTmp.default)) {
                 throw new Error(colors.red('current user main directory not exists!'))
             }
             userHome = homeOrTmp.default

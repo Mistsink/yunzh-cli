@@ -7,21 +7,21 @@ function getNpmInfo(npmName, registry = getDefaultRegistry()) {
     if (!npmName) return null
 
     const npmInfoUrl = urlJoin(registry, npmName)
-    return axios.get(npmInfoUrl).then(res => res.status === 200 ? res : null)
+    return axios.get(npmInfoUrl).then(res => res.status === 200 ? res.data : null)
 }
 
 /**
  * get registry, false for taobao, true for npmjs
- * @param {boolean} isOrigin defaut: false
+ * @param {boolean} isOrigin defaut: true
  * @returns 
  */
-function getDefaultRegistry(isOrigin = false) {
+function getDefaultRegistry(isOrigin = true) {
     return isOrigin ? 'https://registry.npmjs.org' : 'https://registry.npm.taobao.org'
 }
 
 
 async function getNpmVersions(npmName, registry) {
-    const { data } = await getNpmInfo(npmName, registry)
+    const data = await getNpmInfo(npmName, registry)
     if (data) {
         return Object.keys(data.versions)
     } else {
@@ -44,9 +44,18 @@ async function getNpmSemverVersion(npmName, baseVersion, registry = getDefaultRe
     return null
 }
 
+async function getNpmLatestVersion(npmName, registry) {
+    let versions = await getNpmVersions(npmName, registry);
+    if (versions) {
+        return versions.sort((a, b) => semver.gt(b, a))[0];
+    }
+    return null;
+}
+
 module.exports = {
     getNpmInfo,
     getNpmVersions,
     getNpmSemverVersion,
-    getDefaultRegistry
+    getDefaultRegistry,
+    getNpmLatestVersion
 }

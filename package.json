@@ -4,7 +4,8 @@
   "description": "云蒸 cli dev",
   "main": "index.js",
   "scripts": {
-    "test_init": "yunzh init test_for_init -d"
+    "test_init_no_tp": "yunzh init test_for_init -d",
+    "test_init_tp": "yunzh init test_for_init -tp /Users/firework/Desktop/front-end/YunZheng_editor/yunzh-cli/yunzh-cli/commands/init --debug "
   },
   "keywords": [],
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/fireworkHy/yunzh-cli/issues"
   },
-  "homepage": "https://github.com/fireworkHy/yunzh-cli#readme"
+  "homepage": "https://github.com/fireworkHy/yunzh-cli#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }

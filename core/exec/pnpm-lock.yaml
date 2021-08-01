@@ -3,7 +3,9 @@ lockfileVersion: 5.3
 specifiers:
   '@yunzh-cli-dev/log': file:../../utils/log
   '@yunzh-cli-dev/package': file:../../models/package
+  '@yunzh-cli-dev/utils': file:../../utils/utils
 
 dependencies:
   '@yunzh-cli-dev/log': link:../../utils/log
   '@yunzh-cli-dev/package': link:../../models/package
+  '@yunzh-cli-dev/utils': link:../../utils/utils

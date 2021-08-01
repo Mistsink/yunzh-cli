@@ -25,5 +25,17 @@
   },
   "bugs": {
     "url": "https://github.com/fireworkHy/yunzh-cli/issues"
+  },
+  "dependencies": {
+    "@yunzh-cli-dev/command": "file:../../models/command",
+    "@yunzh-cli-dev/log": "file:../../utils/log",
+    "@yunzh-cli-dev/package": "file:../../models/package",
+    "@yunzh-cli-dev/request": "file:../../utils/request",
+    "@yunzh-cli-dev/utils": "file:../../utils/utils",
+    "ejs": "^3.1.6",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
+    "inquirer": "^8.1.2",
+    "semver": "^7.3.5"
   }
 }

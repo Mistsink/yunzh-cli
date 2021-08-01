@@ -18,5 +18,9 @@
   "gitHead": "8e528c423537fa65c0afa840b3f17eaff21fa51c",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "cli-spinners": "^2.6.0",
+    "ora": "^5.4.1"
   }
 }

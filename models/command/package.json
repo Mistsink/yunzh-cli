@@ -1,0 +1,34 @@
+{
+  "name": "@yunzh-cli-dev/command",
+  "version": "1.0.6",
+  "description": "> TODO: description",
+  "author": "Mistsink <fireworkhy@gmail.com>",
+  "homepage": "https://github.com/fireworkHy/yunzh-cli/tree/main/models/command#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piedmontmist/yunzh-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Piedmontmist/yunzh-cli/issues"
+  },
+  "dependencies": {
+    "@yunzh-cli-dev/log": "file://../../utils/log",
+    "colors": "^1.4.0",
+    "semver": "^7.3.5"
+  }
+}

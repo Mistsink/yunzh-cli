@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@yunzh-cli-dev/log": "file:../../utils/log",
+    "@yunzh-cli-dev/utils": "file:../../utils/utils",
     "@yunzh-cli-dev/package": "file:../../models/package"
   }
 }
