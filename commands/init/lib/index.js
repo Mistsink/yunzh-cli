@@ -319,7 +319,8 @@ class InitCommand extends Command {
             log.info('run command:', this.templateInfo.runCommand)
         }
 
-        const ignore = ['node_modules/*', 'public/*']
+        const templateIgnore = this.templateInfo.ignore || [];
+        const ignore = ['**/node_modules/**', ...templateIgnore];
         await this.ejsRender({ ignore })
 
     }
