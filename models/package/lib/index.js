@@ -9,9 +9,7 @@ const pathExists = require('path-exists')
 const { isObject } = require('@yunzh-cli-dev/utils')
 const formatPath = require('@yunzh-cli-dev/format-path')
 const { getDefaultRegistry, getNpmLatestVersion } = require('@yunzh-cli-dev/get-npm-info');
-const { throws } = require('assert');
-const { Console } = require('console');
-
+const log = require('@yunzh-cli-dev/log')
 
 class Package {
 
@@ -72,11 +70,11 @@ class Package {
     await npminstall({
       root: this.targetPath,
       storeDir: this.storeDir,
-      registry: getDefaultRegistry(true),
+      registry: getDefaultRegistry(),
       pkgs: [
         { name: this.pkgName, version: this.pkgVersion }
       ]
-    }).catch(console.log)
+    }).catch(log.error)
   }
 
 

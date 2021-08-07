@@ -10,6 +10,7 @@ specifiers:
   fs-extra: ^10.0.0
   glob: ^7.1.7
   inquirer: ^8.1.2
+  kebab-case: ^1.0.1
   semver: ^7.3.5
 
 dependencies:
@@ -22,6 +23,7 @@ dependencies:
   fs-extra: 10.0.0
   glob: 7.1.7
   inquirer: 8.1.2
+  kebab-case: 1.0.1
   semver: 7.3.5
 
 packages:
@@ -310,6 +312,10 @@ packages:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.6
+    dev: false
+
+  /kebab-case/1.0.1:
+    resolution: {integrity: sha512-txPHx6nVLhv8PHGXIlAk0nYoh894SpAqGPXNvbg2hh8spvHXIah3+vT87DLoa59nKgC6scD3u3xAuRIgiMqbfQ==}
     dev: false
 
   /lodash/4.17.21:
